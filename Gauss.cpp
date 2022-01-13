@@ -74,6 +74,25 @@ void fillExampleGauss(double **tab)
     }
 }
 
+void zamienWiersze(double **tab, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (abs(tab[i][i] < abs(tab[j][i])))
+            {
+                for (int k = 0; k < n + 1; k++)
+                {
+                    double temp = tab[i][k];
+                    tab[i][k] = tab[j][k];
+                    tab[j][k] = temp;
+                }
+            }
+        }
+    }
+}
+
 void Gauss(double **tab, int n, double *x)
 {
     for (int i = 0; i < n - 1; i++)
@@ -128,6 +147,7 @@ int main()
         allocateMemory2D(tab, n, n + 1);
         fillExampleGauss(tab);
         showArray2D(tab, n, n + 1);
+        zamienWiersze(tab, n);
         Gauss(tab, n, x);
         cout << endl;
         showArray2D(tab, n, n + 1);
@@ -140,6 +160,7 @@ int main()
         allocateMemory2D(tab, n, n + 1);
         fillArray2D(tab, n, n + 1);
         showArray2D(tab, n, n + 1);
+        zamienWiersze(tab, n);
         Gauss(tab, n, x);
         cout << endl;
         showArray2D(tab, n, n + 1);
