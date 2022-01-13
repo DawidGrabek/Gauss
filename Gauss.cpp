@@ -74,7 +74,7 @@ void fillExampleGauss(double **tab)
     }
 }
 
-void zamienWiersze(double **tab, int n)
+void changeRows(double **tab, int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -147,7 +147,7 @@ int main()
         allocateMemory2D(tab, n, n + 1);
         fillExampleGauss(tab);
         showArray2D(tab, n, n + 1);
-        zamienWiersze(tab, n);
+        changeRows(tab, n);
         Gauss(tab, n, x);
         cout << endl;
         showArray2D(tab, n, n + 1);
@@ -160,7 +160,7 @@ int main()
         allocateMemory2D(tab, n, n + 1);
         fillArray2D(tab, n, n + 1);
         showArray2D(tab, n, n + 1);
-        zamienWiersze(tab, n);
+        changeRows(tab, n);
         Gauss(tab, n, x);
         cout << endl;
         showArray2D(tab, n, n + 1);
