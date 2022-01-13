@@ -1,7 +1,7 @@
 # Gauss
 
-This project is used to solve linear equation
+This project is used to solve linear equations
 
-## Installation
+## Run Project
 
 - `g++ Gauss.cpp -o Gauss && Gauss`
